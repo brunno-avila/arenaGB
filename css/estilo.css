@@ -1,0 +1,415 @@
+/* Estilo Arena GB */
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #17191d;
+  background-color: #f3f4f6;
+  font-family: Arial, sans-serif;
+}
+main {
+  flex: 1;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+html {
+  height: 100%;
+}
+
+/* Menu */
+.topo {
+  padding: 10px 0;
+  background-color: #17191d;
+  border-bottom: 3px solid #d7193f;
+}
+.topo .navbar-brand {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.topo .navbar-brand span {
+  color: #d7193f;
+}
+.logo {
+  height: 34px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.topo .nav-link {
+  color: #dddddd;
+  padding: 10px 14px !important;
+}
+.topo .nav-link:hover,
+.topo .nav-link.active {
+  color: #ffffff;
+  background-color: #303238;
+  border-bottom: 2px solid #d7193f;
+}
+
+/* Títulos e caixas */
+h1 {
+  margin: 5px 0 25px;
+  padding-left: 15px;
+  border-left: 5px solid #d7193f;
+  font-size: 32px;
+  font-weight: bold;
+}
+h2 {
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.caixa,
+.numero,
+.jogo,
+.inicio {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px #dddddd;
+}
+.caixa {
+  padding: 24px;
+}
+.inicio {
+  min-height: 300px;
+  padding: 50px;
+}
+
+.inicio p {
+  color: #69707a;
+  font-size: 18px;
+}
+.logo-inicio {
+  height: 85px;
+  margin-bottom: 20px;
+}
+
+/* Botões e campos */
+.btn {
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.btn-vermelho {
+  color: #ffffff;
+  background-color: #d7193f;
+  border: 1px solid #d7193f;
+}
+.btn-vermelho:hover {
+  color: #ffffff;
+  background-color: #a90f2e;
+  border-color: #a90f2e;
+}
+.btn-preto {
+  color: #ffffff;
+  background-color: #17191d;
+  border: 1px solid #17191d;
+}
+.btn-preto:hover {
+  color: #ffffff;
+  background-color: #303238;
+}
+.btn-branco {
+  color: #17191d;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+}
+.btn-branco:hover {
+  color: #17191d;
+  background-color: #f0f0f0;
+}
+.form-control,
+.form-select {
+  min-height: 42px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: #d7193f;
+  box-shadow: 0 0 4px #e7a0ae;
+}
+.form-label {
+  font-weight: bold;
+}
+
+/* Painel e tabelas */
+.numero {
+  height: 100%;
+  padding: 20px;
+}
+.numero span {
+  display: block;
+  margin-bottom: 8px;
+  color: #69707a;
+  font-size: 14px;
+}
+.numero strong {
+  color: #d7193f;
+  font-size: 25px;
+}
+.table-responsive {
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px #dddddd;
+}
+.table {
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+.table thead th {
+  padding: 14px;
+  color: #ffffff;
+  background-color: #22252b;
+  font-size: 13px;
+}
+.table tbody td {
+  padding: 12px 14px;
+}
+.table tbody tr:hover {
+  background-color: #f7f7f7;
+}
+.badge {
+  padding: 6px 9px;
+  border-radius: 20px;
+}
+.status-pendente {
+  color: #71551a;
+  background-color: #fff2cb;
+  border: 1px solid #f3d98a;
+}
+.status-ativo {
+  color: #146344;
+  background-color: #dff5e9;
+}
+.status-bloqueado {
+  color: #ffffff;
+  background-color: #d7193f;
+}
+
+/* Mensagens e rodapé */
+.mensagem {
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: bold;
+}
+.mensagem-ok {
+  background-color: #16734d;
+}
+.mensagem-erro {
+  background-color: #d7193f;
+}
+.rodape {
+  margin-top: 35px;
+  padding: 18px 0;
+  color: #bbbbbb;
+  background-color: #17191d;
+  font-size: 14px;
+}
+
+/* Cartões de jogos */
+.jogo {
+  height: 100%;
+  overflow: hidden;
+}
+.jogo-capa {
+  min-height: 145px;
+  padding: 35px 10px;
+  color: #ffffff;
+  background-color: #22252b;
+  border-bottom: 3px solid #d7193f;
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+}
+.jogo-corpo {
+  padding: 20px;
+}
+.jogo-corpo p {
+  color: #69707a;
+}
+
+/* Roleta */
+.maquina {
+  display: inline-block;
+  padding: 12px;
+  background-color: #17191d;
+  border: 4px solid #d7193f;
+  border-radius: 14px;
+}
+.grade {
+  display: grid;
+  grid-template-columns: repeat(3, 110px);
+  gap: 7px;
+}
+.celula {
+  display: flex;
+  height: 110px;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #f1f2f4;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+}
+.celula img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.celula.ganhou {
+  background-color: #d7193f;
+}
+.mini {
+  width: 34px;
+  height: 34px;
+  margin-right: 2px;
+  object-fit: contain;
+}
+.premio {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 11px 16px;
+  color: #ffffff;
+  background-color: #d7193f;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+#saldo-atual {
+  color: #d7193f;
+}
+#contador {
+  margin-top: 16px;
+  color: #69707a;
+}
+.modal-content {
+  overflow: hidden;
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+}
+
+@media (max-width: 767px) {
+  .topo .nav-link {
+    padding: 10px !important;
+  }
+}
+@media (max-width: 575px) {
+  h1 {
+    font-size: 26px;
+  }
+  .inicio {
+    min-height: 0;
+    padding: 25px;
+  }
+  .inicio .btn {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  .logo-inicio {
+    height: 68px;
+  }
+  .caixa {
+    padding: 18px;
+  }
+  .grade {
+    grid-template-columns: repeat(3, 85px);
+    width: 255px;
+    gap: 5px;
+  }
+  .celula {
+    height: 85px;
+  }
+  .maquina {
+    display: block;
+    width: 280px;
+    margin: 0 auto;
+    padding: 8px;
+  }
+  .numero {
+    padding: 14px;
+  }
+  .numero strong {
+    font-size: 18px;
+  }
+  .table {
+    font-size: 14px;
+  }
+}
+
+/* Cartão inicial: texto e imagem ficam juntos */
+.inicio-cartao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  min-height: 360px;
+  padding: 40px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px #dddddd;
+}
+.inicio-texto {
+  width: 55%;
+}
+.inicio-cartao .logo-inicio {
+  display: block;
+}
+.imagem-destaque {
+  display: block;
+  width: 40%;
+  max-width: 430px;
+  max-height: 400px;
+  object-fit: contain;
+}
+@media (max-width: 700px) {
+  .inicio-cartao {
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px;
+  }
+  .inicio-texto {
+    width: 100%;
+  }
+  .imagem-destaque {
+    width: 80%;
+  }
+}
+
+/* Botão de música ao lado do título da roleta */
+.titulo-roleta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.titulo-roleta h1 {
+  margin-bottom: 25px;
+}
+.botao-musica {
+  width: 46px;
+  height: 46px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  background-color: #17191d;
+  border: 2px solid #d7193f;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+}
+.botao-musica:hover {
+  background-color: #d7193f;
+}
+.icone-pausar {
+  display: none;
+}
+.botao-musica.tocando .icone-tocar {
+  display: none;
+}
+.botao-musica.tocando .icone-pausar {
+  display: inline;
+}
