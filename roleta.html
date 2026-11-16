@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roleta do JOB! - Arena GB</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/estilo.css" rel="stylesheet">
+  <link rel="icon" href="img/logo.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark topo">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="img/logo-branco.png" alt="" class="logo">ARENA <span>GB</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+          aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="jogos.html">Jogos</a></li>
+            <li class="nav-item"><a class="nav-link" href="jogadores.html">Jogadores</a></li>
+            <li class="nav-item"><a class="nav-link" href="historico.html">Histórico</a></li>
+            <li class="nav-item"><a class="nav-link" href="painel.html">Painel</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-4">
+    <div class="titulo-roleta">
+      <h1>Roleta do JOB!</h1>
+      <button type="button" id="botao-musica" class="botao-musica" aria-label="Tocar música" aria-pressed="false" title="Tocar música">
+        <span class="icone-tocar">▶</span>
+        <span class="icone-pausar">❚❚</span>
+      </button>
+    </div>
+    <audio id="musica-roleta" src="audio/musica.mp3" loop></audio>
+    <div id="mensagem"></div>
+
+    <div class="row g-4">
+      <section class="col-lg-5">
+        <div class="maquina">
+          <div class="grade" id="grade"></div>
+        </div>
+        <p class="premio d-none" id="premio"></p>
+      </section>
+
+      <section class="col-lg-4">
+        <div class="caixa">
+          <div class="mb-3">
+            <label for="jogador" class="form-label">Jogador</label>
+            <select id="jogador" class="form-select" onchange="mostrar_saldo()"></select>
+          </div>
+          <p>Saldo: <strong id="saldo-atual">-</strong></p>
+          <div class="mb-3">
+            <label for="aposta" class="form-label">Aposta</label>
+            <input type="number" id="aposta" class="form-control" min="1" step="0.01" placeholder="Digite o valor da aposta">
+          </div>
+          <button type="button" class="btn btn-vermelho btn-lg w-100" id="botao-girar" onclick="girar()">GIRAR</button>
+        </div>
+      </section>
+
+      <section class="col-lg-3">
+        <h2>Prêmios</h2>
+        <p class="small">3 iguais em uma linha (3 retas e 2 diagonais). O prêmio é a aposta vezes:</p>
+        <table class="table table-sm">
+          <tbody id="tabela-premios"></tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">Arena GB - Desenvolvimento Web I - UnC. Proibido para MAIORES de 18 anos. Créditos fictícios.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/dados.js"></script>
+  <script src="js/roleta.js"></script>
+  <script src="js/musica.js"></script>
+</body>
+</html>
+
+
+
