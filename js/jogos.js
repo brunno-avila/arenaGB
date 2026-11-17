@@ -1,4 +1,3 @@
-// jogos.js - mostra os jogos do cassino
 
 function mostrar_jogos() {
   const jogadas = pegar_jogadas();
@@ -9,7 +8,6 @@ function mostrar_jogos() {
       return jogada.jogo_id === jogo.id;
     }).length;
 
-    // só jogo ativo tem o botão de jogar
     let botao = '<button class="btn btn-branco w-100" disabled>Em breve</button>';
     if (jogo.status === 'ativo') {
       botao = `<a href="${jogo.pagina}" class="btn btn-vermelho w-100">Jogar</a>`;

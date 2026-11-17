@@ -1,4 +1,3 @@
-// historico.js - lista de todas as jogadas
 
 function preencher_filtro_jogos() {
   let opcoes = '<option value="">Todos os jogos</option>';

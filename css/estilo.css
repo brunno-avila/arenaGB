@@ -1,4 +1,3 @@
-/* Estilo Arena GB */
 body {
   min-height: 100%;
   display: flex;
@@ -17,7 +16,6 @@ html {
   height: 100%;
 }
 
-/* Menu */
 .topo {
   padding: 10px 0;
   background-color: #17191d;
@@ -47,7 +45,6 @@ html {
   border-bottom: 2px solid #d7193f;
 }
 
-/* Títulos e caixas */
 h1 {
   margin: 5px 0 25px;
   padding-left: 15px;
@@ -86,7 +83,6 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* Botões e campos */
 .btn {
   padding: 9px 16px;
   border-radius: 8px;
@@ -135,7 +131,6 @@ h2 {
   font-weight: bold;
 }
 
-/* Painel e tabelas */
 .numero {
   height: 100%;
   padding: 20px;
@@ -190,7 +185,6 @@ h2 {
   background-color: #d7193f;
 }
 
-/* Mensagens e rodapé */
 .mensagem {
   margin-bottom: 16px;
   padding: 12px 16px;
@@ -212,7 +206,6 @@ h2 {
   font-size: 14px;
 }
 
-/* Cartões de jogos */
 .jogo {
   height: 100%;
   overflow: hidden;
@@ -234,7 +227,6 @@ h2 {
   color: #69707a;
 }
 
-/* Roleta */
 .maquina {
   display: inline-block;
   padding: 12px;
@@ -341,7 +333,6 @@ h2 {
   }
 }
 
-/* Cartão inicial: texto e imagem ficam juntos */
 .inicio-cartao {
   display: flex;
   align-items: center;
@@ -381,7 +372,6 @@ h2 {
   }
 }
 
-/* Botão de música ao lado do título da roleta */
 .titulo-roleta {
   display: flex;
   align-items: center;

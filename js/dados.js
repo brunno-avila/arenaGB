@@ -1,5 +1,3 @@
-// dados.js - funções usadas em todas as páginas
-// Tudo fica salvo no localStorage do navegador.
 
 function ler_lista(chave) {
   const texto = localStorage.getItem(chave);
@@ -56,7 +54,6 @@ function formatar_data(texto) {
   return data.toLocaleDateString('pt-BR') + ' ' + data.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
 }
 
-// tipo: 'ok' (preto) ou 'erro' (vermelho)
 function mostrar_mensagem(texto, tipo) {
   const area = document.getElementById('mensagem');
   area.innerHTML = '<div class="mensagem mensagem-' + tipo + '">' + texto + '</div>';
@@ -65,7 +62,6 @@ function mostrar_mensagem(texto, tipo) {
   }, 4000);
 }
 
-// dados de exemplo, criados só na primeira vez
 function criar_dados_iniciais() {
   if (localStorage.getItem('iniciado')) {
     return;

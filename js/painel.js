@@ -1,4 +1,3 @@
-// painel.js - números calculados a partir das jogadas salvas
 
 function calcular_painel() {
   const jogadas = pegar_jogadas();
@@ -16,7 +15,6 @@ function calcular_painel() {
   document.getElementById('lucro-casa').textContent = formatar_dinheiro(total_apostado - total_premios);
   document.getElementById('total-jogadas').textContent = jogadas.length;
 
-  // ranking por saldo
   jogadores.sort(function (a, b) { return b.saldo - a.saldo; });
   let linhas = '';
   jogadores.forEach(function (jogador, posicao) {

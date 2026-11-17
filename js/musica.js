@@ -1,4 +1,3 @@
-/* Controle de músicas da Roleta */
 const audio_roleta = document.getElementById('musica-roleta');
 const botao_musica = document.getElementById('botao-musica');
 const musicas = [

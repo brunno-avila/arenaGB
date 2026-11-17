@@ -1,5 +1,3 @@
-// jogadores.js - cadastrar, listar, editar e excluir jogadores
-// e mudar o status: pendente -> ativo -> bloqueado
 
 const formulario = document.getElementById('form-jogador');
 const modal_exclusao = new bootstrap.Modal(document.getElementById('modal-exclusao'));
@@ -44,7 +42,6 @@ function mostrar_jogadores() {
   tabela.innerHTML = linhas;
 }
 
-// os botões de status mudam conforme a situação do jogador
 function botoes_do_jogador(jogador) {
   let botoes = '';
   if (jogador.status === 'pendente') {
@@ -99,7 +96,6 @@ function salvar_jogador(evento) {
 
   const lista = pegar_jogadores();
   if (id === '') {
-    // todo jogador novo começa pendente
     lista.push({ id: novo_id(), nome: nome, idade: idade, saldo: saldo, status: 'pendente' });
     mostrar_mensagem('Jogador cadastrado.', 'ok');
   } else {
@@ -135,7 +131,6 @@ function limpar_formulario() {
   document.getElementById('botao-cancelar').classList.add('d-none');
 }
 
-// quem já jogou não pode ser excluído (o histórico perderia o nome)
 function pedir_exclusao(id) {
   const ja_jogou = pegar_jogadas().some(function (jogada) {
     return jogada.jogador_id === id;
@@ -161,7 +156,6 @@ function confirmar_exclusao() {
   mostrar_jogadores();
 }
 
-// só jogador ativo pode jogar
 function mudar_status(id, novo_status) {
   const lista = pegar_jogadores();
   const jogador = buscar_por_id(lista, id);

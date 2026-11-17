@@ -1,10 +1,8 @@
-// roleta.js - Roleta da Sorte (caça-níquel 3x3)
-// Gira 9 símbolos. Se 3 iguais caírem em uma linha, o jogador ganha a aposta vezes o valor do símbolo.
+
 
 const jogo = buscar_por_id(pegar_jogos(), 'roleta');
 
-// peso = chance de aparecer (quanto maior, mais comum)
-// imagem = foto que aparece na grade
+
 const simbolos = [
   { nome: 'J', peso: 30, paga: 2, imagem: 'img/simbolos/j.png' },
   { nome: 'Q', peso: 25, paga: 3, imagem: 'img/simbolos/q.png' },
@@ -14,10 +12,7 @@ const simbolos = [
   { nome: '7', peso: 4, paga: 50, imagem: 'img/simbolos/sete.png' }
 ];
 
-// posições da grade:
-// 0 1 2
-// 3 4 5
-// 6 7 8
+
 const linhas = [
   [0, 1, 2],
   [3, 4, 5],
@@ -28,7 +23,6 @@ const linhas = [
 
 let girando = false;
 
-// sorteia um símbolo respeitando o peso de cada um
 function sortear_simbolo() {
   const total = simbolos.reduce(function (soma, simbolo) { return soma + simbolo.peso; }, 0);
   let numero = Math.random() * total;
@@ -46,7 +40,6 @@ function imagem_do_simbolo(nome) {
   return simbolo.imagem;
 }
 
-// carrega as fotos antes, para a animação não piscar
 function carregar_imagens() {
   simbolos.forEach(function (simbolo) {
     const imagem = new Image();
@@ -54,7 +47,6 @@ function carregar_imagens() {
   });
 }
 
-// cria as 9 casas da grade uma vez só
 function criar_grade() {
   let html = '';
   for (let i = 0; i < 9; i++) {
@@ -63,7 +55,6 @@ function criar_grade() {
   document.getElementById('grade').innerHTML = html;
 }
 
-// troca a foto de cada casa
 function desenhar_grade(resultado) {
   const celulas = document.querySelectorAll('#grade .celula');
   resultado.forEach(function (nome, posicao) {
@@ -74,7 +65,6 @@ function desenhar_grade(resultado) {
   });
 }
 
-// confere as 5 linhas e soma os prêmios
 function calcular_premio(resultado, aposta) {
   let premio = 0;
   let posicoes = [];
@@ -128,7 +118,6 @@ function girar() {
   const jogador = buscar_por_id(jogadores, document.getElementById('jogador').value);
   const aposta = Number(document.getElementById('aposta').value);
 
-  // regras antes de girar
   if (jogo.status !== 'ativo') {
     mostrar_mensagem('Este jogo não está disponível.', 'erro');
     return;
@@ -152,7 +141,6 @@ function girar() {
 
   document.getElementById('mensagem').innerHTML = '';
 
-  // a aposta sai do saldo antes de girar
   jogador.saldo = jogador.saldo - aposta;
   salvar_jogadores(jogadores);
   mostrar_saldo();
@@ -166,7 +154,6 @@ function girar() {
   document.getElementById('botao-girar').disabled = true;
   document.getElementById('premio').classList.add('d-none');
 
-  // animação: troca os símbolos rapidamente e para uma coluna de cada vez
   let colunas_paradas = 0;
   const tela = [];
   for (let i = 0; i < 9; i++) {
@@ -197,7 +184,6 @@ function girar() {
 function terminar_giro(jogador_id, aposta, resultado) {
   const conta = calcular_premio(resultado, aposta);
 
-  // pinta de vermelho as casas que formaram linha
   const celulas = document.querySelectorAll('#grade .celula');
   conta.posicoes.forEach(function (posicao) {
     celulas[posicao].classList.add('ganhou');
@@ -219,7 +205,6 @@ function terminar_giro(jogador_id, aposta, resultado) {
   });
   salvar_jogadas(jogadas);
 
-  // o aviso de prêmio só aparece quando ganha
   if (conta.premio > 0) {
     const aviso = document.getElementById('premio');
     aviso.textContent = 'Ganhou ' + formatar_dinheiro(conta.premio);
